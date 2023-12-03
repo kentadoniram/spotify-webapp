@@ -22,9 +22,9 @@ const ArtistSearch = ({ token }) => {
 
   const renderArtists = () => {
     return artists.map((artist) => (
-      <div key={artist.id}>
+      <div className="gap-row" key={artist.id}>
         {artist.images.length ? (
-          <img src={artist.images[1].url} alt="" />
+          <img className="artist-profile" loading="lazy" src={artist.images[1].url} alt="" />
         ) : (
           <div>No image</div>
         )}
@@ -34,11 +34,18 @@ const ArtistSearch = ({ token }) => {
   };
 
   return (
-    <form onSubmit={searchArtists}>
-      <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-      <button type="submit">Search</button>
-      {renderArtists()}
-    </form>
+    <>
+      <form className="search-form" onSubmit={searchArtists}>
+        <input
+          type="text"
+          id="search"
+          onChange={(e) => setSearchKey(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+      <div>Artists</div>
+      <div className="container confined">{renderArtists()}</div>
+    </>
   );
 };
 

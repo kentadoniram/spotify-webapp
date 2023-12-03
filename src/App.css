@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(9 10 12);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,38 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/* Artist */
+.artist-profile {
+  border-radius: 3rem;
+  width: 6rem;
+  height: 6rem;
+}
+
+/* Container panel */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  border: 0 solid #505a69;
+  background-color: rgb(20 23 28);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.confined {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+}
+
+.gap-row {
+  grid-template-columns: repeat(8,minmax(0,1fr));
+}
+
+.search-form {
+  border-radius: 100px;
+  background-color: #61dafb;
 }
 
 @keyframes App-logo-spin {
